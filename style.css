@@ -1,132 +1,88 @@
-/* --- Games Page Specific Styles --- */
+/* --- Store Page Specific Styles --- */
 
-/* Generic Page Hero Section (for games.html, etc.) */
-.page-hero-section {
-    background: url('https://via.placeholder.com/1500x300/1e1e3b/ffffff?text=Our+Games+Page') no-repeat center center/cover;
-    height: 300px; /* Shorter than main hero */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-    position: relative;
-    z-index: 1;
-    margin-bottom: 50px;
+/* Store Page Hero Section Background */
+.store-hero-bg {
+    background: url('https://via.placeholder.com/1500x500/1a1a2e/ffffff?text=DanverCraft+Store+Banner') no-repeat center center/cover;
 }
 
-.page-hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Lighter overlay */
-    z-index: -1;
+/* Product Section */
+.store-products-section {
+    padding: 60px 0;
+    background-color: #282846; /* Slightly lighter dark background for this section */
 }
 
-.page-hero-content h2 {
+.store-products-section h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
 }
 
-.page-hero-content p {
-    font-size: 1.2em;
-}
-
-
-/* Game Modes Section */
-.game-modes-section {
-    padding: 50px 0;
-    background-color: #1a1a2e; /* Same as body for continuous feel */
-}
-
-.game-grid {
+.product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px; /* Increased gap */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center; /* Center products if grid doesn't fill width */
 }
 
-.game-card {
-    background-color: #282846; /* Card background */
+.product-card {
+    background-color: #1a1a2e;
     border-radius: 10px;
-    overflow: hidden; /* Ensures background images stay within card */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     text-align: center;
-    padding: 30px; /* Padding for content inside card */
-    position: relative; /* For background image overlay */
-    color: #fff; /* Ensure text is white */
-    min-height: 250px; /* Ensure cards have some height */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Align content to bottom */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #00bfff; /* Accent color for the top border */
 }
 
-.game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
-.game-card h3 {
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
+    font-size: 1.6em;
     margin-bottom: 10px;
-    color: #00bfff; /* Bright blue for titles */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-}
-
-.game-card p {
-    font-size: 1em;
-    margin-bottom: 20px;
-    color: #e0e0e0;
-}
-
-.btn-game {
-    background: #5a2a7a;
     color: #fff;
-    padding: 12px 25px;
-    border-radius: 7px;
-    font-size: 1em;
-    transition: background 0.3s ease;
 }
 
-.btn-game:hover {
-    background: #6f3491;
-    text-decoration: none;
+.product-card p {
+    font-size: 0.95em;
+    color: #c0c0c0;
+    margin-bottom: 15px;
+    min-height: 50px; /* Give some consistent height for descriptions */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Background Images for each game mode */
-/* IMPORTANT: Replace these placeholder URLs with actual gaming-related images if you have them! */
-
-.survival-bg {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/34495e/ffffff?text=Survival+Background') no-repeat center center/cover;
+.product-card .price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #00bfff; /* Bright blue for price */
+    margin-bottom: 20px;
+    display: block; /* Make it take its own line */
 }
 
-.skyblock-bg {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/2980b9/ffffff?text=Skyblock+Background') no-repeat center center/cover;
+/* Override btn-primary to be a bit smaller for product cards */
+.product-card .btn-primary {
+    padding: 8px 18px;
+    font-size: 0.9em;
 }
 
-.factions-bg {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/e74c3c/ffffff?text=Factions+Background') no-repeat center center/cover;
-}
-
-.pvp-bg {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/8e44ad/ffffff?text=PvP+Background') no-repeat center center/cover;
-}
-
-
-/* Responsive Design for Games Page */
+/* Responsive Design for Store Page */
 @media (max-width: 768px) {
-    .page-hero-content h2 {
-        font-size: 2em;
-    }
-    .page-hero-content p {
-        font-size: 0.9em;
-    }
-    .game-grid {
+    .product-grid {
         grid-template-columns: 1fr;
     }
 }
