@@ -1,113 +1,9 @@
-/* Basic Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- Games Page Specific Styles --- */
 
-body {
-    font-family: 'Roboto Condensed', sans-serif; /* Primary font */
-    line-height: 1.6;
-    background-color: #1a1a2e; /* Dark background, similar to gaming sites */
-    color: #e0e0e0; /* Light text color */
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden; /* Clear floats */
-}
-
-a {
-    color: #00bfff; /* Bright blue for links, similar to gaming UI */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    background: #5a2a7a; /* A vibrant, deep purple */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.btn:hover {
-    background: #6f3491; /* Slightly lighter purple on hover */
-    text-decoration: none;
-}
-
-.btn-primary {
-    background: #00bfff; /* A bright, eye-catching blue for main action */
-}
-
-.btn-primary:hover {
-    background: #0099cc;
-}
-
-/* Header */
-.main-header {
-    background: #23233b; /* Darker background for header */
-    padding: 20px 0;
-    border-bottom: 3px solid #00bfff; /* Accent line at the bottom */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.main-header .logo h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-}
-
-.main-nav ul {
-    display: flex;
-}
-
-.main-nav ul li {
-    margin-left: 30px;
-}
-
-.main-nav ul li a {
-    color: #e0e0e0;
-    font-size: 1.1em;
-    font-weight: bold;
-    padding: 5px 0;
-    transition: color 0.3s ease;
-}
-
-.main-nav ul li a:hover {
-    color: #00bfff;
-    text-decoration: none;
-}
-
-.user-actions .btn {
-    margin-left: 10px;
-}
-
-/* Hero Section */
-.hero-section {
-    background: url('https://via.placeholder.com/1500x500/0a0a1a/ffffff?text=Epic+Gaming+Background') no-repeat center center/cover; /* Placeholder image */
-    height: 500px;
+/* Generic Page Hero Section (for games.html, etc.) */
+.page-hero-section {
+    background: url('https://via.placeholder.com/1500x300/1e1e3b/ffffff?text=Our+Games+Page') no-repeat center center/cover;
+    height: 300px; /* Shorter than main hero */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,136 +11,122 @@ ul {
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     position: relative;
-    z-index: 1; /* Ensure content is above potential overlays */
+    z-index: 1;
+    margin-bottom: 50px;
 }
 
-.hero-section::before {
+.page-hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.4); /* Lighter overlay */
     z-index: -1;
 }
 
-.hero-content h2 {
+.page-hero-content h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5em;
-    margin-bottom: 20px;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-.hero-content p {
-    font-size: 1.3em;
-    margin-bottom: 30px;
+.page-hero-content p {
+    font-size: 1.2em;
 }
 
-/* News & Updates Section */
-.news-updates-section {
-    padding: 60px 0;
-    background-color: #282846; /* Slightly lighter dark background */
+
+/* Game Modes Section */
+.game-modes-section {
+    padding: 50px 0;
+    background-color: #1a1a2e; /* Same as body for continuous feel */
 }
 
-.news-updates-section h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #fff;
-}
-
-.news-grid {
+.game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 40px; /* Increased gap */
 }
 
-.news-item {
-    background: #1a1a2e;
-    padding: 30px;
+.game-card {
+    background-color: #282846; /* Card background */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
-    border-top: 3px solid #5a2a7a;
-}
-
-.news-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-}
-
-.news-item h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #00bfff;
-}
-
-.news-item p {
-    font-size: 1em;
-    margin-bottom: 15px;
-    color: #c0c0c0;
-}
-
-.news-item .read-more {
-    font-weight: bold;
-    color: #00bfff;
-}
-
-/* Footer */
-.main-footer {
-    background: #11111f;
-    color: #888;
-    padding: 30px 0;
+    overflow: hidden; /* Ensures background images stay within card */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    font-size: 0.9em;
-    border-top: 2px solid #5a2a7a;
+    padding: 30px; /* Padding for content inside card */
+    position: relative; /* For background image overlay */
+    color: #fff; /* Ensure text is white */
+    min-height: 250px; /* Ensure cards have some height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align content to bottom */
 }
 
-.main-footer .footer-links a {
-    color: #888;
-    margin: 0 10px;
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
 }
 
-.main-footer .footer-links a:hover {
+.game-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #00bfff; /* Bright blue for titles */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.game-card p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.btn-game {
+    background: #5a2a7a;
     color: #fff;
-    text-decoration: underline;
+    padding: 12px 25px;
+    border-radius: 7px;
+    font-size: 1em;
+    transition: background 0.3s ease;
 }
 
-/* Responsive Design */
+.btn-game:hover {
+    background: #6f3491;
+    text-decoration: none;
+}
+
+/* Background Images for each game mode */
+/* IMPORTANT: Replace these placeholder URLs with actual gaming-related images if you have them! */
+
+.survival-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/34495e/ffffff?text=Survival+Background') no-repeat center center/cover;
+}
+
+.skyblock-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/2980b9/ffffff?text=Skyblock+Background') no-repeat center center/cover;
+}
+
+.factions-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/e74c3c/ffffff?text=Factions+Background') no-repeat center center/cover;
+}
+
+.pvp-bg {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/600x400/8e44ad/ffffff?text=PvP+Background') no-repeat center center/cover;
+}
+
+
+/* Responsive Design for Games Page */
 @media (max-width: 768px) {
-    .main-header .container {
-        flex-direction: column;
-        text-align: center;
+    .page-hero-content h2 {
+        font-size: 2em;
     }
-
-    .main-header .logo {
-        margin-bottom: 15px;
+    .page-hero-content p {
+        font-size: 0.9em;
     }
-
-    .main-nav ul {
-        flex-direction: column;
-        margin-bottom: 15px;
-    }
-
-    .main-nav ul li {
-        margin: 5px 0;
-    }
-
-    .user-actions {
-        display: flex;
-        justify-content: center;
-    }
-
-    .hero-content h2 {
-        font-size: 2.5em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .news-grid {
+    .game-grid {
         grid-template-columns: 1fr;
     }
 }
